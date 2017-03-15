@@ -190,7 +190,7 @@ pUndefMacroArrayInUse [] _ = ""
 pUndefMacroArrayInUse (a:as) pL = pUndefMacroShadowItem a pL ++ pUndefMacroArrayInUse as pL
     where pUndefMacroShadowItem a pL = 
             let l_arrayName = aName a
-            in  "#undef " ++ pShowArrayTerm l_arrayName pL ++ breakline
+            in "#undef " ++ l_arrayName ++ breakline
 
 pShowKernel :: String -> PKernel -> String
 pShowKernel l_name l_kernel = "Pochoir_Kernel_" ++ show dim ++ "D(" ++ l_name ++ ", " ++
